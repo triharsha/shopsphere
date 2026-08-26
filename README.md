@@ -8,7 +8,7 @@ The project demonstrates practical React development using Redux Toolkit, React 
 
 ## 🌐 Live Demo
 
-🔗 **Live Website:** Coming Soon
+🔗 **Live Website:** https://shopsphere-rosy.vercel.app/
 
 > The deployment link will be added after deploying ShopSphere.
 
