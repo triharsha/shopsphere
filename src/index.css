@@ -1,0 +1,425 @@
+@import "tailwindcss";
+
+
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ======================================
+   ShopSphere Theme
+====================================== */
+
+@theme {
+  --color-brand: #059669;
+  --color-brand-dark: #047857;
+  --color-brand-light: #d1fae5;
+
+  --color-accent: #f59e0b;
+  --color-accent-light: #fef3c7;
+
+  --color-surface: #ffffff;
+  --color-surface-dark: #1c1917;
+
+  --color-background: #fafaf9;
+  --color-background-dark: #0c0a09;
+
+  --color-text-main: #1c1917;
+  --color-text-muted: #78716c;
+}
+
+/* ======================================
+   Global Reset
+====================================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+
+  overflow-x: hidden;
+
+  background-color: #fafaf9;
+  color: #1c1917;
+
+  font-family:
+    Inter,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  line-height: 1.5;
+
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+.dark body {
+  background-color: #0c0a09;
+  color: #f5f5f4;
+}
+
+/* ======================================
+   Typography
+====================================== */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* ======================================
+   Form Base
+====================================== */
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+/* ======================================
+   Focus States
+====================================== */
+
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid #059669;
+  outline-offset: 3px;
+}
+
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: none;
+}
+
+/* ======================================
+   Text Selection
+====================================== */
+
+::selection {
+  background-color: #059669;
+  color: #ffffff;
+}
+
+/* ======================================
+   Scrollbar
+====================================== */
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #a8a29e #f5f5f4;
+}
+
+::-webkit-scrollbar {
+  width: 9px;
+  height: 9px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #f5f5f4;
+}
+
+::-webkit-scrollbar-thumb {
+  min-height: 40px;
+
+  border: 2px solid #f5f5f4;
+  border-radius: 9999px;
+
+  background-color: #a8a29e;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #78716c;
+}
+
+.dark * {
+  scrollbar-color: #57534e #1c1917;
+}
+
+.dark ::-webkit-scrollbar-track {
+  background-color: #1c1917;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  border-color: #1c1917;
+  background-color: #57534e;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background-color: #78716c;
+}
+
+/* ======================================
+   Reusable Utility Classes
+====================================== */
+
+.container-shell {
+  width: 100%;
+  max-width: 1440px;
+
+  margin-inline: auto;
+
+  padding-inline: 1rem;
+}
+
+@media (min-width: 640px) {
+  .container-shell {
+    padding-inline: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container-shell {
+    padding-inline: 2rem;
+  }
+}
+
+.section-spacing {
+  padding-block: 3rem;
+}
+
+@media (min-width: 768px) {
+  .section-spacing {
+    padding-block: 4.5rem;
+  }
+}
+
+.surface-card {
+  border: 1px solid #e7e5e4;
+  border-radius: 1.25rem;
+
+  background-color: #ffffff;
+
+  box-shadow:
+    0 1px 2px rgba(28, 25, 23, 0.04),
+    0 8px 24px rgba(28, 25, 23, 0.04);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.surface-card:hover {
+  border-color: #d6d3d1;
+
+  box-shadow:
+    0 4px 12px rgba(28, 25, 23, 0.06),
+    0 16px 36px rgba(28, 25, 23, 0.08);
+}
+
+.dark .surface-card {
+  border-color: #292524;
+  background-color: #1c1917;
+
+  box-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.2),
+    0 8px 24px rgba(0, 0, 0, 0.18);
+}
+
+.dark .surface-card:hover {
+  border-color: #44403c;
+}
+
+/* ======================================
+   Brand Gradients
+====================================== */
+
+.brand-gradient {
+  background:
+    linear-gradient(
+      135deg,
+      #047857 0%,
+      #059669 55%,
+      #10b981 100%
+    );
+}
+
+.brand-text-gradient {
+  background:
+    linear-gradient(
+      90deg,
+      #047857,
+      #059669,
+      #d97706
+    );
+
+  background-clip: text;
+  -webkit-background-clip: text;
+
+  color: transparent;
+}
+
+/* ======================================
+   Animations
+====================================== */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.35s ease-out;
+}
+
+.animate-slideUp {
+  animation: slideUp 0.45s ease-out;
+}
+
+.animate-scaleIn {
+  animation: scaleIn 0.25s ease-out;
+}
+
+/* ======================================
+   Skeleton Loader
+====================================== */
+
+.skeleton {
+  background:
+    linear-gradient(
+      90deg,
+      #e7e5e4 25%,
+      #f5f5f4 50%,
+      #e7e5e4 75%
+    );
+
+  background-size: 200% 100%;
+
+  animation: shimmer 1.5s infinite;
+}
+
+.dark .skeleton {
+  background:
+    linear-gradient(
+      90deg,
+      #292524 25%,
+      #44403c 50%,
+      #292524 75%
+    );
+
+  background-size: 200% 100%;
+}
+
+/* ======================================
+   Hidden Scrollbar Utility
+====================================== */
+
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* ======================================
+   Reduced Motion
+====================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+
+    transition-duration: 0.01ms !important;
+  }
+}
