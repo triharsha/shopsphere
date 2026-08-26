@@ -432,37 +432,27 @@ npm run preview
 
 ## 📸 Screenshots
 
-Screenshots can be added here after deployment.
-
-Suggested screenshots:
-
 ### Home Page
 
-<!-- Add Home page screenshot -->
+![ShopSphere Home](./screenshots/home.png)
 
 ### Shop
 
-<!-- Add Shop page screenshot -->
+![ShopSphere Shop](./screenshots/shop.png)
 
 ### Product Details
 
-<!-- Add Product Details screenshot -->
-
-### Cart
-
-<!-- Add Cart screenshot -->
+![ShopSphere Product Details](./screenshots/product-details.png)
 
 ### Checkout
 
-<!-- Add Checkout screenshot -->
-
-### Orders
-
-<!-- Add Orders screenshot -->
+![ShopSphere Checkout](./screenshots/checkout.png)
 
 ### Dark Mode
 
-<!-- Add Dark Mode screenshot -->
+![ShopSphere Dark Mode](./screenshots/dark-mode.png)
+
+
 
 ---
 
