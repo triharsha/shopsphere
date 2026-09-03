@@ -1,15 +1,14 @@
 # 🛍️ ShopSphere
 
-ShopSphere is a modern and responsive e-commerce web application built with React. It provides a complete frontend shopping experience including product discovery, search and filtering, cart management, wishlist, product comparison, checkout, order management, user accounts, and persistent user data.
+ShopSphere is a modern and responsive frontend e-commerce web application built with React. It provides a complete shopping experience including product discovery, search and filtering, cart management, wishlist, product comparison, checkout, order management, user accounts, and persistent user data.
 
-The project demonstrates practical React development using Redux Toolkit, React Router, REST API integration, localStorage persistence, responsive UI design, protected routes, dark mode, and production optimization.
+The project demonstrates practical React development using Redux Toolkit, React Router, REST API integration, localStorage persistence, responsive UI design, protected routes, dark mode, and production-oriented optimization.
 
 ---
 
 ## 🌐 Live Demo
 
-🔗 **Live Website:** https://shopsphere-rosy.vercel.app/
-
+**Live Website:** https://shopsphere-rosy.vercel.app/
 
 ---
 
@@ -17,9 +16,11 @@ The project demonstrates practical React development using Redux Toolkit, React 
 
 ShopSphere simulates a complete e-commerce shopping platform where users can browse products, search and filter the catalog, view detailed product information, manage their cart and wishlist, compare products, complete checkout, and manage their orders and account information.
 
-Product data is retrieved from the DummyJSON Products API, while authentication and user-specific information are handled locally using Redux Toolkit and browser localStorage.
+Product data is retrieved from the DummyJSON Products API, while authentication, checkout state, orders, addresses, and other user-specific information are simulated on the frontend using Redux Toolkit and browser localStorage.
 
 The application is fully responsive and supports both light and dark themes.
+
+> ShopSphere is a frontend portfolio project. Authentication, payment validation, checkout, and order processing are simulated client-side and do not represent real server-side authentication or payment processing.
 
 ---
 
@@ -43,7 +44,7 @@ The application is fully responsive and supports both light and dark themes.
 - Product grid layout
 - Category filtering
 - Price and rating filters
-- Multiple filters
+- Multiple combined filters
 - Active filter management
 - Product sorting
 - Pagination
@@ -53,7 +54,7 @@ The application is fully responsive and supports both light and dark themes.
 ### 🔍 Search
 
 - Search products by keyword
-- Search results page
+- Dedicated search results page
 - Query-based product discovery
 - Handles empty and invalid searches
 - Integrated with the product API
@@ -81,6 +82,8 @@ The application is fully responsive and supports both light and dark themes.
 - Clear cart
 - Cart quantity indicator
 - Cart subtotal calculation
+- Delivery charge calculation
+- Free-delivery threshold
 - Stock-aware quantity limits
 - Guest cart persistence
 - User-specific cart persistence
@@ -113,6 +116,8 @@ The application is fully responsive and supports both light and dark themes.
 - User-specific shopping data
 - Profile information management
 
+Authentication is implemented as a frontend simulation using browser storage and is not intended to represent production server-side authentication.
+
 ### 💳 Checkout
 
 - Cart checkout
@@ -128,6 +133,8 @@ The application is fully responsive and supports both light and dark themes.
 - Order creation
 - Buy Now does not clear the existing cart
 
+Payment methods are simulated for demonstration purposes. No real payment transaction is performed.
+
 ### 📍 Address Management
 
 - Add addresses
@@ -139,13 +146,13 @@ The application is fully responsive and supports both light and dark themes.
 
 ### 📋 Orders
 
-- Order success page
+- Order success flow
 - Generated order IDs
 - Order history
 - Order details
 - Product and quantity information
 - Delivery address details
-- Payment information
+- Payment method information
 - Order totals
 - Persistent order history
 
@@ -154,6 +161,8 @@ The application is fully responsive and supports both light and dark themes.
 - View account information
 - Update profile
 - Persistent profile changes
+- Account statistics
+- Recent order summary
 - Access orders
 - Manage addresses
 - User-specific data management
@@ -214,6 +223,8 @@ The interface includes responsive navigation, mobile menus, filter drawers, adap
 
 - Lucide React
 - React Hot Toast
+- Framer Motion
+- @hello-pangea/dnd
 
 ### Build Tool
 
@@ -264,6 +275,8 @@ The Redux store is configured in:
 ```text
 src/app/store.js
 ```
+
+Additional persistent application features such as addresses, orders, recently viewed products, and theme preferences are managed through the application's storage and supporting state logic.
 
 ---
 
@@ -398,7 +411,7 @@ Run ESLint using:
 npm run lint
 ```
 
-The final ShopSphere codebase has been checked for ESLint errors and warnings before production build.
+The ShopSphere codebase is validated with ESLint as part of the final production-readiness checks.
 
 ---
 
@@ -452,19 +465,18 @@ npm run preview
 
 ![ShopSphere Dark Mode](./screenshots/dark-mode.png)
 
-
-
 ---
 
 ## 🧪 Testing
 
-ShopSphere was manually tested across its major application flows, including:
+ShopSphere has been manually tested across its major application flows, including:
 
 - Authentication
 - Protected route redirects
 - Product browsing
 - Search
 - Filtering
+- Combined filters
 - Sorting
 - Pagination
 - Product details
@@ -477,14 +489,16 @@ ShopSphere was manually tested across its major application flows, including:
 - Address management
 - Order creation
 - Order history
+- Order details
 - Account management
 - Recently viewed products
+- User-specific data persistence
 - Theme persistence
 - localStorage persistence
 - Responsive layouts
 - Route navigation and scrolling
 
-The project was also validated using ESLint and a final Vite production build.
+The project is also validated using ESLint and a Vite production build before deployment.
 
 ---
 
